@@ -1,104 +1,195 @@
-import time
-import tkinter as tk
+from PyQt5 import QtCore, QtGui, QtWidgets
 
-def weight_label():
-    kg_label = tk.Label(display_frame, text='kg', font=('Arial', 25), bg='white')
-    kg_label.place(relx=0, rely=0, anchor='nw')
 
-def height_label():
-    cm_label = tk.Label(display_frame, text='cm', font=('Arial', 25), bg='white')
-    cm_label.place(relx=0, rely=0, anchor='nw')
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(600, 849)
+        MainWindow.setMinimumSize(QtCore.QSize(600, 849))
+        MainWindow.setMaximumSize(QtCore.QSize(600, 849))
+        MainWindow.setStyleSheet("background-color:rgb(49, 49, 49)")
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.frame_5 = QtWidgets.QFrame(self.centralwidget)
+        self.frame_5.setMaximumSize(QtCore.QSize(16777215, 70))
+        self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_5.setObjectName("frame_5")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.frame_5)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.label_7 = QtWidgets.QLabel(self.frame_5)
+        self.label_7.setMaximumSize(QtCore.QSize(300, 30))
+        self.label_7.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(255, 255, 255);")
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout_6.addWidget(self.label_7, 0, QtCore.Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.frame_5)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.label.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(135, 135, 135);")
+        self.label.setObjectName("label")
+        self.verticalLayout_4.addWidget(self.label)
+        self.lineEdit_weight = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_weight.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_weight.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.lineEdit_weight.setStyleSheet("background-color: rgb(227, 227, 227);\n""font: 75 12pt \"MS Shell Dlg 2\";""border-radius:10px;")
+        self.lineEdit_weight.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.lineEdit_weight.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_weight.setObjectName("lineEdit_weight")
+        self.verticalLayout_4.addWidget(self.lineEdit_weight)
+        self.verticalLayout.addWidget(self.frame)
+        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
+        self.frame_2.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_2)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.label_2 = QtWidgets.QLabel(self.frame_2)
+        self.label_2.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.label_2.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(135, 135, 135);")
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_3.addWidget(self.label_2)
+        self.lineEdit_height = QtWidgets.QLineEdit(self.frame_2)
+        self.lineEdit_height.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_height.setStyleSheet("background-color: rgb(227, 227, 227);\n""font: 75 12pt \"MS Shell Dlg 2\";""border-radius:10px;")
+        self.lineEdit_height.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_height.setObjectName("lineEdit_height")
+        self.verticalLayout_3.addWidget(self.lineEdit_height)
+        self.verticalLayout.addWidget(self.frame_2)
+        self.frame_3 = QtWidgets.QFrame(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(150)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
+        self.frame_3.setSizePolicy(sizePolicy)
+        self.frame_3.setMinimumSize(QtCore.QSize(150, 0))
+        self.frame_3.setMaximumSize(QtCore.QSize(16777215, 65))
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.frame_3)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.pushButton_clear = QtWidgets.QPushButton(self.frame_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(150)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_clear.sizePolicy().hasHeightForWidth())
+        self.pushButton_clear.setSizePolicy(sizePolicy)
+        self.pushButton_clear.setMinimumSize(QtCore.QSize(150, 0))
+        self.pushButton_clear.setMaximumSize(QtCore.QSize(150, 40))
+        self.pushButton_clear.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(255, 255, 255);\n""border: 2px solid rgb(0, 255, 255);\n""border-radius: 10px;")
+        self.pushButton_clear.setObjectName("pushButton_clear")
+        self.horizontalLayout.addWidget(self.pushButton_clear)
+        self.pushButton_cal = QtWidgets.QPushButton(self.frame_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(150)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_cal.sizePolicy().hasHeightForWidth())
+        self.pushButton_cal.setSizePolicy(sizePolicy)
+        self.pushButton_cal.setMinimumSize(QtCore.QSize(150, 0))
+        self.pushButton_cal.setMaximumSize(QtCore.QSize(150, 40))
+        self.pushButton_cal.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(255, 255, 255);\n""border: 2px solid rgb(0, 255, 255);\n""border-radius: 10px;")
+        self.pushButton_cal.setObjectName("pushButton_cal")
+        self.horizontalLayout.addWidget(self.pushButton_cal)
+        self.verticalLayout.addWidget(self.frame_3)
+        self.frame_4 = QtWidgets.QFrame(self.centralwidget)
+        self.frame_4.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_4)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.label_3 = QtWidgets.QLabel(self.frame_4)
+        self.label_3.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.label_3.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(135, 135, 135);")
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_5.addWidget(self.label_3)
+        self.label_bmi = QtWidgets.QLabel(self.frame_4)
+        self.label_bmi.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.label_bmi.setStyleSheet("background-color: rgb(227, 227, 227);\n""font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_bmi.setObjectName("label_bmi")
+        self.label_bmi.setIndent(15)
+        self.verticalLayout_5.addWidget(self.label_bmi)
+        self.label_6 = QtWidgets.QLabel(self.frame_4)
+        self.label_6.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.label_6.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";\n""color:rgb(135, 135, 135);")
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_5.addWidget(self.label_6)
+        self.label_status = QtWidgets.QLabel(self.frame_4)
+        self.label_status.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.label_status.setStyleSheet("background-color: rgb(227, 227, 227);\n""font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_status.setObjectName("label_status")
+        self.label_status.setIndent(15)
+        self.verticalLayout_5.addWidget(self.label_status)
+        self.verticalLayout.addWidget(self.frame_4)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-def bmi_label():
-    bmi_label = tk.Label(display_frame, text='bmi', font=('Arial', 25), bg='white')
-    bmi_label.place(relx=0, rely=0, anchor='nw')
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-def result_label():
-    result_label = tk.Label(display_frame, text='res', font=('Arial', 25), bg='white')
-    result_label.place(relx=0, rely=0, anchor='nw')
+        self.pushButton_clear.clicked.connect(self.method_clear)
+        self.pushButton_cal.clicked.connect(self.method_cal)
 
-def add_to_display(value):
-    current_text = display_var.get()
-    if current_text == '0' and value != '.':
-        display_var.set(value)
-    else:
-        display_var.set(current_text + str(value))
+    def method_clear(self):
+        self.lineEdit_height.setText("")
+        self.lineEdit_weight.setText("")
+        self.label_bmi.setText("")
+        self.label_status.setText("")
 
-def clear_display():
-    display_var.set('0')
+    def method_cal(self):
+        try:
+                w = self.lineEdit_weight.text()
+                h = self.lineEdit_height.text()+'/100'
+                height = float(eval(h))
+                bmi = float(int(w)/(height**2))
+                bmi = round(bmi,1)
+                self.label_bmi.setText(f"{bmi:.1f}")
 
-def enter_pressed():
-    global weight, height, calc_state
-    bmi = 0
-    if calc_state == 0:
-        weight_label()
-        weight = float(display_var.get())
-        display_var.set('0')
-        calc_state = 1
-        height_label()
-    elif calc_state == 1:
-        height = float(display_var.get())
-        display_var.set('0')
-        bmi_label()
-        bmi = calculate_bmi(weight, height)
-        display_var.set(f"{bmi:.2f}")
-        calc_state = 2
-        # Calculate BMI
-    elif calc_state == 2:
-        result_label()
-        bmi = calculate_bmi(weight, height)
-        if bmi < 18.5:
-            display_var.set('Underweight')
-        elif 18.5 <= bmi <= 25.0:
-            display_var.set('Normal')
-        else :
-            display_var.set('Overweight')
-        calc_state = 0
-        
-def calculate_bmi(weight, height):
-    height_meters = height / 100  # Convert height from cm to meters
-    bmi = weight / ((height_meters) ** 2)
-    return bmi
+                if bmi < 18.5:
+                        self.label_status.setText("UNDER_WEIGHT")
+                elif bmi > 25.0:
+                        self.label_status.setText("OVER_WEIGHT")
+                else:
+                        self.label_status.setText("NORMAL")
+        except:
+             self.label_bmi.setText("Please Enter Correct Input")
+            
+            
 
-root = tk.Tk()
-root.geometry('300x500')
-root.configure(bg="#333333")
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_7.setText(_translate("MainWindow", "BMI CALCULATOR BY ALOK"))
+        self.label.setText(_translate("MainWindow", "Enter Weight (in KG)"))
+        self.lineEdit_weight.setText(_translate("MainWindow", "60"))
+        self.label_2.setText(_translate("MainWindow", "Enter Height (in CM)"))
+        self.lineEdit_height.setText(_translate("MainWindow", "170"))
+        self.pushButton_clear.setText(_translate("MainWindow", "Clear"))
+        self.pushButton_cal.setText(_translate("MainWindow", "Calculate"))
+        self.label_3.setText(_translate("MainWindow", "BMI"))
+        self.label_bmi.setText(_translate("MainWindow", "20.8"))
+        self.label_6.setText(_translate("MainWindow", "Body Status"))
+        self.label_status.setText(_translate("MainWindow", "NORMAL"))
 
-# Display Frame
-display_frame = tk.Frame(root, width=280, height=70, bg='white', highlightthickness=2, highlightbackground='black')
-display_frame.pack(padx=10, pady=10)
 
-display_var = tk.StringVar()
-display_var.set('0')
-
-weight = 0.0
-height = 0.0
-calc_state = 0  # State: 0 - Enter weight, 1 - Enter height, 2 - Calculate BMI
-display = tk.Label(display_frame, textvariable=display_var, font=('Arial', 20), width=16, anchor='e', relief='ridge', bd=5)
-display.pack(expand=True, fill='both')
-weight_label()
-
-# Button Frame
-button_frame = tk.Frame(root, bg="#333333")
-button_frame.pack()
-
-# Number Buttons
-button_values = [
-    ('7', '8', '9'),
-    ('4', '5', '6'),
-    ('1', '2', '3'),
-    ('.', '0', 'Clear')
-]
-
-for i, row in enumerate(button_values):
-    for j, value in enumerate(row):
-        if value != 'Clear':
-            tk.Button(button_frame, text=value, width=5, height=2, font=('Arial', 12), command=lambda v=value: add_to_display(v)).grid(row=i, column=j, padx=5, pady=5)
-        else:
-            tk.Button(button_frame, text=value, width=5, height=2, font=('Arial', 12), command=clear_display).grid(row=i, column=j, padx=5, pady=5)
-
-# Enter Button
-enter_button = tk.Button(root, text="Enter", width=10, height=2, font=('Arial', 12), command=enter_pressed)
-enter_button.pack(pady=20)
-
-root.mainloop()
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
