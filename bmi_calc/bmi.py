@@ -171,7 +171,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "BMI Calculator By Alok"))
         self.label_7.setText(_translate("MainWindow", "BMI CALCULATOR BY ALOK"))
         self.label.setText(_translate("MainWindow", "Enter Weight (in KG)"))
         self.lineEdit_weight.setText(_translate("MainWindow", "60"))
