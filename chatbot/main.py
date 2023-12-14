@@ -61,5 +61,5 @@ def wiki_search(message):
             temp_list.remove(i)
     
     query = ' '.join(temp_list)
-    results = wikipedia.summary(query,sentences=2)
+    results = wikipedia.summary(query,sentences=1)
     return results
