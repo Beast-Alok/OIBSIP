@@ -66,7 +66,7 @@ def check_all_messages(message):
     
     response('I am doing fine sir, and whats about you?',['how', 'are', 'you', 'doing'], required_words=['how','you','doing'])
     response('Thank you very much sir !',['i', 'love', 'jarvis'], required_words=['love','jarvis'])
-    response('Thank you sir!',['i', 'great', 'jarvis'], required_words=['great','jarvis'])
+    response('Thank you sir !',['i', 'great', 'jarvis'], required_words=['great','jarvis'])
     response('Thank you sir!',['very', 'good', 'jarvis'], required_words=['good'])
     
     response('Opening youtube sir!',['can', 'open', 'visit', 'youtube'], required_words=['youtube'])
@@ -105,6 +105,7 @@ if __name__ == "__main__":
     while True:
         message = takeCommands().lower()
         if("quit" in message):
+            print(f"You: {message}")
             print("Bot: Have a nice day sir!")
             speak("Have a nice day sir!")
             break

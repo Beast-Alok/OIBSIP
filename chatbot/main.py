@@ -18,9 +18,9 @@ def subtract(message):
         for j in i:
             if 48 <= ord(j) <= 57:
                 if num_sub:
-                    num_sub -= int(i)
-                else:
                     num_sub += int(i)
+                else:
+                    num_sub -= int(i)
                 break
     
     return num_sub
@@ -61,6 +61,5 @@ def wiki_search(message):
             temp_list.remove(i)
     
     query = ' '.join(temp_list)
-    print(query)
-    results = wikipedia.summary(query,sentences=3)
+    results = wikipedia.summary(query,sentences=2)
     return results
